@@ -27,3 +27,7 @@ Desktop.ini
 
 # Ngc generated files
 **/*.ngfactory.ts
+
+# compiled output
+/dist
+/build
