@@ -69,4 +69,4 @@ $ npm run lint
 
 ## License
 
-MIT © [Carlos Edinson Roso Espinosa](mailto:ce.roso398@gmail.com)
+MIT © [Juan Herrera](mailto:david.juanherrera@gmail.com)
