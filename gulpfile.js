@@ -49,8 +49,8 @@ gulp.task('ngc', function() {
   })
   .then((exitCode) => {
     if(exitCode === 1) {
-      // This is error is caught in the 'compile' task by the runSequence method callback
-      // so that when ngc fails to compile, the compile process stops running
+      // This error is caught in the 'compile' task by the runSequence method callback
+      // so that when ngc fails to compile, the whole compile process stops running
       throw new Error('ngc compilation failed');
     }
   });
