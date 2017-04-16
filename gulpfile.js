@@ -40,8 +40,8 @@ gulp.task('inline-resources', function() {
 
 
 /**
- * 4. Run the Angular compiler, ngc, on the /.tmp folder. This will output all compiled modules
- *    to the /build folder.
+ * 4. Run the Angular compiler, ngc, on the /.tmp folder. This will output all 
+ *    compiled modules to the /build folder.
  */
 gulp.task('ngc', function() {
   return ngc({
@@ -77,8 +77,8 @@ gulp.task('rollup', function() {
 
 /**
  * 6. Copy all the files from /build to /dist, except .js files. We ignore all .js from /build
- *    because with don't need individual modules anymore, but just the Flat ES module generated
- *    on step 4.
+ *    because with don't need individual modules anymore, just the Flat ES module generated
+ *    on step 5.
  */
 gulp.task('copy:build', function() {
   return gulp.src([`${buildFolder}/**/*`, `!${buildFolder}/**/*.js`])
