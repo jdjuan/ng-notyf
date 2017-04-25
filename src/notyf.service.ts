@@ -6,7 +6,7 @@ import {
   EmbeddedViewRef,
   ComponentFactory } from '@angular/core';
 
-import { ToastComponent } from './toast.component';
+import { ToastComponent, ToastType } from './toast.component';
 
 @Injectable()
 export class NotyfService {
@@ -25,6 +25,7 @@ export class NotyfService {
 
   addComponent() {
     let componentRef = this.factory.create(this.injector);
+    componentRef.instance.type = ToastType.Alert;
     this.appRef.attachView(componentRef.hostView);
     this.toastContainer.appendChild((componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement)
   }
