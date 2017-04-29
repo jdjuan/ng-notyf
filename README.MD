@@ -5,66 +5,49 @@
 To install this library, run:
 
 ```bash
-$ npm install ng-notyf --save
-```
-
-## Consuming your library
-
-Once you have published your library to npm, you can import your library in any Angular application by running:
-
-```bash
 $ npm install ng-notyf
 ```
 
-and then from your Angular `AppModule`:
+## Usage
 
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+### 1. Import ng-notyf
 
-import { AppComponent } from './app.component';
+```javascript
+import { ngNotyfModule } from 'ng-notyf';
+```
 
-// Import your library
-import { SampleModule } from 'ng-notyf';
+### 2. Add ng-notyf to your module imports
 
+```javascript
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule,
-
-    // Specify your library as an import
-    LibraryModule
+    ngNotyfModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [...],
+  exports: [...],
+  providers: [...]
 })
-export class AppModule { }
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+### 3. Inject ng-notyf service into your component
 
-```xml
-<!-- You can now use your library component in app.component.html -->
-<h1>
-  {{title}}
-</h1>
-<sampleComponent></sampleComponent>
+```javascript
+import { NgNotyfService } from 'ng-notyf';
+
+export class myComponent {
+
+  constructor(
+    private ngNotyfService: NgNotyfService
+  ) { }
+
+}
 ```
 
-## Development
+### 4. That's it!, start using it
 
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
-
-To lint all `*.ts` files:
-
-```bash
-$ npm run lint
+```javascript
+ngNotyfService.alert("Hello, it's me, I am working!")
+ngNotyfService.danger("Hello, it's me, Batman!")
 ```
 
 ## License
