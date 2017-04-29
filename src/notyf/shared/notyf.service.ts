@@ -1,35 +1,36 @@
-import {
-  Injectable,
-  ApplicationRef,
-  Injector,
-  ComponentFactoryResolver,
-  EmbeddedViewRef,
-  ComponentFactory
-} from '@angular/core';
-import { ToastComponent, ToastType } from './../toast/toast.component';
+import { Injectable, Injector, ComponentFactoryResolver, EmbeddedViewRef } from '@angular/core';
+import { ToastComponent } from './../toast/toast.component';
+import { ToastContainerComponent } from './../toast-container/toast-container.component';
 
 @Injectable()
 export class NotyfService {
 
-  factory: ComponentFactory<ToastComponent>;
   toastContainer: HTMLElement;
 
-  constructor(private appRef: ApplicationRef,
-    componentFactoryResolver: ComponentFactoryResolver,
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector) {
-    this.factory = componentFactoryResolver.resolveComponentFactory(ToastComponent);
-    this.toastContainer = document.createElement('div');
-    this.toastContainer.classList.add('toast-container');
-    document.body.appendChild(this.toastContainer);
+    this.toastContainer = this.createElementFromComponent(ToastContainerComponent);
+    this.addChild(this.toastContainer);
   }
 
-  addComponent() {
-    let componentRef = this.factory.create(this.injector);
-    componentRef.instance.type = ToastType.Alert;
-    this.appRef.attachView(componentRef.hostView);
-    this.toastContainer.appendChild(
-      (componentRef.hostView as EmbeddedViewRef<any>)
-        .rootNodes[0] as HTMLElement
-    );
+  createElementFromComponent(component) {
+    const containerRef = this.componentFactoryResolver
+      .resolveComponentFactory(component)
+      .create(this.injector);
+    return (containerRef.hostView as EmbeddedViewRef<any>)
+      .rootNodes[0] as HTMLElement;
+  }
+
+  addChild(child, dom = document.body) {
+    dom.appendChild(child);
+  }
+
+  alert() {
+    const toast = this.createElementFromComponent(ToastComponent);
+    this.addChild(toast, this.toastContainer);
   }
 }
+
+  // componentRef.instance.type = ToastType.Alert;
+  // this.appRef.bootstrap(this.toastFactory);
