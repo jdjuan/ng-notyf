@@ -13,7 +13,7 @@ $ npm install ng-notyf
 ### 1. Import ng-notyf
 
 ```javascript
-import { ngNotyfModule } from 'ng-notyf';
+import { NotyfModule } from 'ng-notyf';
 ```
 
 ### 2. Add ng-notyf to your module imports
@@ -21,7 +21,7 @@ import { ngNotyfModule } from 'ng-notyf';
 ```javascript
 @NgModule({
   imports: [
-    ngNotyfModule
+    NotyfModule
   ],
   declarations: [...],
   exports: [...],
@@ -32,12 +32,12 @@ import { ngNotyfModule } from 'ng-notyf';
 ### 3. Inject ng-notyf service into your component
 
 ```javascript
-import { NgNotyfService } from 'ng-notyf';
+import { NotyfService } from 'ng-notyf';
 
 export class myComponent {
 
   constructor(
-    private ngNotyfService: NgNotyfService
+    private notyfService: NgNotyfService
   ) { }
 
 }
@@ -46,8 +46,8 @@ export class myComponent {
 ### 4. That's it!, start using it
 
 ```javascript
-ngNotyfService.alert("Hello, it's me, I am working!")
-ngNotyfService.danger("Hello, it's me, Batman!")
+notyfService.alert("Hello, it's me, I am working!")
+notyfService.danger("Hello, it's me, Batman!")
 ```
 
 ## License
