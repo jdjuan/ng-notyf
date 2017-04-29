@@ -1,10 +1,10 @@
+/* eslint-disable */
 // https://github.com/filipesilva/angular-quickstart-lib/blob/master/inline-resources.js
 'use strict';
 
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-
 
 /**
  * Simple Promiseify function that takes a Node API and return a version that supports promises.
