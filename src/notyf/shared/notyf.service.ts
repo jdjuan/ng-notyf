@@ -1,12 +1,12 @@
-import { 
-  Injectable, 
+import {
+  Injectable,
   ApplicationRef,
   Injector,
-  ComponentFactoryResolver, 
+  ComponentFactoryResolver,
   EmbeddedViewRef,
-  ComponentFactory } from '@angular/core';
-
-import { ToastComponent, ToastType } from './toast.component';
+  ComponentFactory
+} from '@angular/core';
+import { ToastComponent, ToastType } from './../toast/toast.component';
 
 @Injectable()
 export class NotyfService {
@@ -15,8 +15,8 @@ export class NotyfService {
   toastContainer: HTMLElement;
 
   constructor(private appRef: ApplicationRef,
-              componentFactoryResolver: ComponentFactoryResolver,
-              private injector: Injector) { 
+    componentFactoryResolver: ComponentFactoryResolver,
+    private injector: Injector) {
     this.factory = componentFactoryResolver.resolveComponentFactory(ToastComponent);
     this.toastContainer = document.createElement('div');
     this.toastContainer.classList.add('toast-container');
@@ -27,6 +27,9 @@ export class NotyfService {
     let componentRef = this.factory.create(this.injector);
     componentRef.instance.type = ToastType.Alert;
     this.appRef.attachView(componentRef.hostView);
-    this.toastContainer.appendChild((componentRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement)
+    this.toastContainer.appendChild(
+      (componentRef.hostView as EmbeddedViewRef<any>)
+        .rootNodes[0] as HTMLElement
+    );
   }
 }
