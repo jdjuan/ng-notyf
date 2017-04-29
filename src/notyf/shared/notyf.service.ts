@@ -14,7 +14,7 @@ export class NotyfService {
     this.addChild(this.toastContainer);
   }
 
-  createElementFromComponent(component) {
+  private createElementFromComponent(component) {
     const containerRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector);
@@ -22,8 +22,8 @@ export class NotyfService {
       .rootNodes[0] as HTMLElement;
   }
 
-  addChild(child, dom = document.body) {
-    dom.appendChild(child);
+  private addChild(child, parent = document.body) {
+    parent.appendChild(child);
   }
 
   alert() {
