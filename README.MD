@@ -46,8 +46,9 @@ export class myComponent {
 ### 4. That's it!, start using it
 
 ```javascript
-notyfService.alert("Hello, it's me, I am working!")
-notyfService.danger("Hello, it's me, Batman!")
+notyfService.alert("Hello, are you batman!?");
+notyfService.confirm("Yes, it's me, Batman");
+notyfService.success("OMG, it's Batman!");
 ```
 
 ## License
