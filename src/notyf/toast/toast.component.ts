@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-toast',
+  selector: 'notyf-toast',
   templateUrl: './toast.component.html',
   styles: ['']
 })
