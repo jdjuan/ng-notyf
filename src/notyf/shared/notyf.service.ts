@@ -1,24 +1,31 @@
-import { Injectable, Injector, ComponentFactoryResolver, EmbeddedViewRef } from '@angular/core';
-import { ToastComponent } from '../toast/toast.component';
+import { Injectable, Injector, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, ComponentRef } from '@angular/core';
+import { ToastComponent, ToastType } from '../toast/toast.component';
 import { ToastContainerComponent } from '../toast-container/toast-container.component';
 
 @Injectable()
 export class NotyfService {
 
-  toastContainer: HTMLElement;
+  private toastContainer: HTMLElement;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
+    private appRef: ApplicationRef,
     private injector: Injector) {
-    this.toastContainer = this.createElementFromComponent(ToastContainerComponent);
+    let toastContainerRef = this.createElementFromComponent(ToastContainerComponent);
+    this.toastContainer = this.getDOMElementFromComponentRef(toastContainerRef);
     this.addChild(this.toastContainer);
   }
 
-  private createElementFromComponent(component: any): HTMLElement {
-    const containerRef = this.componentFactoryResolver
+  private createElementFromComponent(component: any): ComponentRef<any> {
+    const componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector);
-    return (containerRef.hostView as EmbeddedViewRef<any>)
+    this.appRef.attachView(componentRef.hostView);
+    return componentRef;
+  }
+
+  private getDOMElementFromComponentRef(componentRef: ComponentRef<any>) {
+    return (componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
   }
 
@@ -26,8 +33,17 @@ export class NotyfService {
     parent.appendChild(child);
   }
 
-  alert() {
-    const toast = this.createElementFromComponent(ToastComponent);
+  alert(message: string) {
+    let toastRef = this.createElementFromComponent(ToastComponent);
+    toastRef.instance.message = message;
+    toastRef.instance.type = ToastType.Alert;
+    const toast = this.getDOMElementFromComponentRef(toastRef);
     this.addChild(toast, this.toastContainer);
+
+
+    setTimeout(() => {
+      this.appRef.detachView(toastRef.hostView);
+      toastRef.destroy();
+    }, 2000);
   }
 }

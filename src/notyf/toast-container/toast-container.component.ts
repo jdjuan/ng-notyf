@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
     selector: 'notyf-toast-container',
-    template: `<div></div>`,
+    template: ` `,
     styleUrls: ['./toast-container.css']
 })
 export class ToastContainerComponent implements OnInit {

@@ -1,0 +1,14 @@
+.notyf-toast {
+  background: #323232;
+  display: block;
+  color: white;
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  text-align: left;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.34)
+}
+
+.notyf-toast__message {
+  margin: 0;
+}
