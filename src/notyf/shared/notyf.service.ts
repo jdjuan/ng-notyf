@@ -1,4 +1,11 @@
-import { Injectable, Injector, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, ComponentRef } from '@angular/core';
+import {
+  Injectable,
+  Injector,
+  ComponentFactoryResolver,
+  EmbeddedViewRef,
+  ApplicationRef,
+  ComponentRef
+} from '@angular/core';
 import { ToastComponent, ToastType } from '../toast/toast.component';
 import { ToastContainerComponent } from '../toast-container/toast-container.component';
 
