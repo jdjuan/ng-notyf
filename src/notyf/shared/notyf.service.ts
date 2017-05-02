@@ -12,31 +12,45 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 @Injectable()
 export class NotyfService {
 
-  private toastContainer: HTMLElement;
   toastDelay = 2000;
+  private toastDynamicStyle: any = {};
+  private toastContainerElement: HTMLElement;
+  private toastContainerRef: ComponentRef<ToastContainerComponent>;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
-    private injector: Injector) {
-    const toastContainerRef = this.createComponentRef(ToastContainerComponent);
-    this.toastContainer = this.getDOMElementFromComponentRef(toastContainerRef);
-    this.addChild(this.toastContainer);
+    private injector: Injector
+  ) {
+    this.toastContainerRef = this.createComponentRef(ToastContainerComponent);
+    this.toastContainerElement = this.getDOMElementFromComponentRef(this.toastContainerRef);
+    this.addChild(this.toastContainerElement);
+  }
+
+  setToastStyle(style: any) {
+    this.toastDynamicStyle = style;
+  }
+
+  setToastContainerStyle(styles: any) {
+    this.setDynamicStyles(styles, this.toastContainerRef);
   }
 
   alert(message: string) {
     const toastRef = this.createComponentRef(ToastComponent);
     toastRef.instance.message = message;
+    this.setDynamicStyles(this.toastDynamicStyle, toastRef);
     toastRef.instance.type = ToastType.Alert;
-    const toast = this.getDOMElementFromComponentRef(toastRef);
-    this.addChild(toast, this.toastContainer);
-    this.destroyRef(toast, this.toastDelay);
+    const toastElement = this.getDOMElementFromComponentRef(toastRef);
+    this.addChild(toastElement, this.toastContainerElement);
+    this.destroyRef(toastRef, this.toastDelay);
   }
 
   private createComponentRef(component: any): ComponentRef<any> {
-    return this.componentFactoryResolver
+    const componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector);
+    this.appRef.attachView(componentRef.hostView);
+    return componentRef;
   }
 
   private getDOMElementFromComponentRef(componentRef: ComponentRef<any>) {
@@ -49,6 +63,15 @@ export class NotyfService {
   }
 
   private destroyRef(componentRef, delay) {
-    setTimeout(() => { componentRef.destroy(); }, delay);
+    setTimeout(() => {
+      this.appRef.detachView(componentRef.hostView);
+      componentRef.destroy();
+    }, delay);
+  }
+
+  private setDynamicStyles(styles: any, componentRef: ComponentRef<any>) {
+    for (const [styleName, styleValue] of Object.entries(styles)) {
+      componentRef.instance.renderer.setElementStyle(componentRef.instance.elementRef.nativeElement, styleName, styleValue);
+    }
   }
 }

@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
 
 @Component({
     selector: 'notyf-toast-container',
-    template: ` `,
+    template: ``,
     styleUrls: ['./toast-container.css']
 })
 export class ToastContainerComponent implements OnInit {
-    constructor() { }
+
+    constructor(public elementRef: ElementRef, public renderer: Renderer) { }
 
     ngOnInit() { }
 }

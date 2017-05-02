@@ -2,17 +2,14 @@ import {
   Component,
   OnInit,
   Input,
-  ViewEncapsulation
+  ElementRef,
+  Renderer
 } from '@angular/core';
 
 @Component({
   selector: 'notyf-toast',
-  templateUrl: './toast.component.html',
-  styleUrls: ['./toast.component.css'],
-  host: {
-    'class': 'notyf-toast'
-  },
-  encapsulation: ViewEncapsulation.None
+  template: `{{message}}`,
+  styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnInit {
 
@@ -22,10 +19,9 @@ export class ToastComponent implements OnInit {
   @Input()
   message: string;
 
-  constructor() { }
+  constructor(public elementRef: ElementRef, public renderer: Renderer) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
 
