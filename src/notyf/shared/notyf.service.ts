@@ -13,22 +13,30 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 export class NotyfService {
 
   private toastContainer: HTMLElement;
+  toastDelay = 2000;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
     private injector: Injector) {
-    let toastContainerRef = this.createElementFromComponent(ToastContainerComponent);
+    const toastContainerRef = this.createComponentRef(ToastContainerComponent);
     this.toastContainer = this.getDOMElementFromComponentRef(toastContainerRef);
     this.addChild(this.toastContainer);
   }
 
-  private createElementFromComponent(component: any): ComponentRef<any> {
-    const componentRef = this.componentFactoryResolver
+  alert(message: string) {
+    const toastRef = this.createComponentRef(ToastComponent);
+    toastRef.instance.message = message;
+    toastRef.instance.type = ToastType.Alert;
+    const toast = this.getDOMElementFromComponentRef(toastRef);
+    this.addChild(toast, this.toastContainer);
+    this.destroyRef(toast, this.toastDelay);
+  }
+
+  private createComponentRef(component: any): ComponentRef<any> {
+    return this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector);
-    this.appRef.attachView(componentRef.hostView);
-    return componentRef;
   }
 
   private getDOMElementFromComponentRef(componentRef: ComponentRef<any>) {
@@ -40,17 +48,7 @@ export class NotyfService {
     parent.appendChild(child);
   }
 
-  alert(message: string) {
-    let toastRef = this.createElementFromComponent(ToastComponent);
-    toastRef.instance.message = message;
-    toastRef.instance.type = ToastType.Alert;
-    const toast = this.getDOMElementFromComponentRef(toastRef);
-    this.addChild(toast, this.toastContainer);
-
-
-    setTimeout(() => {
-      this.appRef.detachView(toastRef.hostView);
-      toastRef.destroy();
-    }, 2000);
+  private destroyRef(componentRef, delay) {
+    setTimeout(() => { componentRef.destroy(); }, delay);
   }
 }
