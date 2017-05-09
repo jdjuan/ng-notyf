@@ -1,3 +1,4 @@
+import { DomService } from './shared/dom.service';
 import { ToastContainerComponent } from './toast-container/toast-container.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -11,6 +12,6 @@ export { NotyfService } from './shared/notyf.service';
   declarations: [ToastComponent, ToastContainerComponent],
   exports: [],
   entryComponents: [ToastComponent, ToastContainerComponent],
-  providers: [NotyfService]
+  providers: [NotyfService, DomService]
 })
 export class NotyfModule { }

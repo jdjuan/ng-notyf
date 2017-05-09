@@ -11,6 +11,7 @@
       "dom",
       "es2017.object"
     ],
+    "target": "es5",
     "skipLibCheck": true,
     // Don't auto-discover @types/node, it results in a ///<reference in the .d.ts output
     "types": []
