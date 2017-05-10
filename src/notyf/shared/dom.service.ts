@@ -1,3 +1,4 @@
+import { INotyfStyle } from './inotyf-style';
 import {
     Injectable,
     Injector,
@@ -33,14 +34,14 @@ export class DomService {
         parent.appendChild(child);
     }
 
-    destroyRef(componentRef, delay) {
+    destroyRef(componentRef: ComponentRef<any>, delay: number) {
         setTimeout(() => {
             this.appRef.detachView(componentRef.hostView);
             componentRef.destroy();
         }, delay);
     }
 
-    setDynamicStyles(styles: any, componentRef: ComponentRef<any>) {
+    setDynamicStyles(styles: INotyfStyle, componentRef: ComponentRef<any>) {
         for (const [styleName, styleValue] of Object.entries(styles)) {
             componentRef.instance.renderer.setElementStyle(
                 componentRef.instance.elementRef.nativeElement,

@@ -1,3 +1,4 @@
+import { INotyfStyle } from './inotyf-style';
 import { DomService } from './dom.service';
 import { Injectable, ComponentRef } from '@angular/core';
 import { ToastComponent, ToastType } from '../toast/toast.component';
@@ -7,8 +8,8 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 export class NotyfService {
 
   private _toastDelay = 2000;
-  private _toastStyle: any = {};
-  private _toastContainerStyle: any = {};
+  private _toastStyle: INotyfStyle = {};
+  private _toastContainerStyle: INotyfStyle = {};
   private toastContainerElement: HTMLElement;
   private toastContainerRef: ComponentRef<ToastContainerComponent>;
 
@@ -32,23 +33,23 @@ export class NotyfService {
     return this._toastDelay;
   }
 
-  set toastDelay(toastDelay) {
+  set toastDelay(toastDelay: number) {
     this._toastDelay = toastDelay > 0 ? toastDelay : 0;
   }
 
-  get toastStyle(): {} {
+  get toastStyle(): INotyfStyle {
     return this._toastStyle;
   }
 
-  set toastStyle(toastStyle: {}) {
+  set toastStyle(toastStyle: INotyfStyle) {
     this._toastStyle = toastStyle;
   }
 
-  get toastContainerStyle(): {} {
+  get toastContainerStyle(): INotyfStyle {
     return this._toastContainerStyle;
   }
 
-  set toastContainerStyle(toastContainerStyle: {}) {
+  set toastContainerStyle(toastContainerStyle: INotyfStyle) {
     this._toastContainerStyle = toastContainerStyle;
     this.domService.setDynamicStyles(this._toastContainerStyle, this.toastContainerRef);
   }
