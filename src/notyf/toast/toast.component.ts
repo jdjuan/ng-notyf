@@ -3,7 +3,8 @@ import {
   OnInit,
   Input,
   ElementRef,
-  Renderer
+  Renderer,
+  HostBinding
 } from '@angular/core';
 
 @Component({
@@ -14,17 +15,21 @@ import {
 export class ToastComponent implements OnInit {
 
   @Input()
+  message: string;
+  @Input()
   type: ToastType;
 
-  @Input()
-  message: string;
+  @HostBinding('class.notyf--success') success: boolean;
+  @HostBinding('class.notyf--error') error: boolean;
 
   constructor(public elementRef: ElementRef, public renderer: Renderer) { }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    this.success = this.type === ToastType.Success;
+    this.error = this.type === ToastType.Error;
+  }
 }
 
 export enum ToastType {
-  Alert, Success
+    Success, Error
 }
