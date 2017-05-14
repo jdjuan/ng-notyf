@@ -10,3 +10,11 @@
   box-sizing: border-box;
   transform-origin: left;
 }
+
+:host(.notyf--error) {
+  background: crimson;
+}
+
+:host(.notyf--success) {
+  background: greenyellow;
+}

@@ -19,14 +19,17 @@ export class NotyfService {
     this.domService.addChild(this.toastContainerElement);
   }
 
-  alert(message: string) {
+  success(message: string) { this.addToast(message, ToastType.Success); }
+  error(message: string) { this.addToast(message, ToastType.Error); }
+
+  private addToast(message: string, type: ToastType) {
     const toastRef = this.domService.createComponentRef(ToastComponent);
+    this.domService.setDynamicStyles(this.toastStyle, toastRef);
     toastRef.instance.message = message;
-    this.domService.setDynamicStyles(this._toastStyle, toastRef);
-    toastRef.instance.type = ToastType.Alert;
+    toastRef.instance.type = type;
     const toastElement = this.domService.getDomElementFromComponentRef(toastRef);
     this.domService.addChild(toastElement, this.toastContainerElement);
-    this.domService.destroyRef(toastRef, this._toastDelay);
+    this.domService.destroyRef(toastRef, this.toastDelay);
   }
 
   get toastDelay(): number {
@@ -51,6 +54,6 @@ export class NotyfService {
 
   set toastContainerStyle(toastContainerStyle: INotyfStyle) {
     this._toastContainerStyle = toastContainerStyle;
-    this.domService.setDynamicStyles(this._toastContainerStyle, this.toastContainerRef);
+    this.domService.setDynamicStyles(this.toastContainerStyle, this.toastContainerRef);
   }
 }
