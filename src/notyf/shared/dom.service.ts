@@ -42,12 +42,13 @@ export class DomService {
     }
 
     setDynamicStyles(styles: INotyfStyle, componentRef: ComponentRef<any>) {
-        for (const [styleName, styleValue] of Object.entries(styles)) {
-            componentRef.instance.renderer.setElementStyle(
+      Object.keys(styles).forEach(cssRule => {
+        let cssValue = styles[cssRule];
+        componentRef.instance.renderer.setElementStyle(
                 componentRef.instance.elementRef.nativeElement,
-                styleName,
-                styleValue
+                cssRule,
+                cssValue
             );
-        }
+      });
     }
 }
