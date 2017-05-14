@@ -28,7 +28,7 @@ export const flyInOut = trigger('flyInOut', [
   ]),
   transition('* => void', [
     animate('0.4s cubic-bezier(0.23, 1, 0.32, 1)', style({
-      transform: 'translateX(-10px)',
+      transform: 'translateX(10px)',
       opacity: 0
     }))
   ])
@@ -39,7 +39,7 @@ export const flyInOut = trigger('flyInOut', [
   template: `{{message}}`,
   animations: [flyInOut],
   host: {
-    '[@flyInOut]': 'in'
+    '[@flyInOut]': 'true'
   },
   styleUrls: ['./toast.component.css']
 })
