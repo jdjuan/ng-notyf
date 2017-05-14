@@ -6,5 +6,7 @@
   margin: 1rem 1rem;
   text-align: left;
   border-radius: 2px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.34)
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.34);
+  box-sizing: border-box;
+  transform-origin: left;
 }
