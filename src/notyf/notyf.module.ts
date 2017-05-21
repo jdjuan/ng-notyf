@@ -9,7 +9,10 @@ import { NotyfService } from './shared/notyf.service';
 export { NotyfService } from './shared/notyf.service';
 
 @NgModule({
-  imports: [CommonModule, BrowserAnimationsModule],
+  imports: [
+    CommonModule,
+    BrowserAnimationsModule
+  ],
   declarations: [ToastComponent, ToastContainerComponent],
   exports: [],
   entryComponents: [ToastComponent, ToastContainerComponent],
