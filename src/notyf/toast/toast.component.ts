@@ -1,5 +1,3 @@
-import { HAMMER_GESTURE_CONFIG } from '@angular/platform-browser/platform-browser';
-import { OpaqueToken } from '@angular/core/core';
 import {
   Component,
   OnInit,
@@ -10,8 +8,8 @@ import {
 } from '@angular/core';
 
 import {
+  AnimationTriggerMetadata,
   trigger,
-  state,
   style,
   transition,
   animate
