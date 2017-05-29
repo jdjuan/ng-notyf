@@ -1,24 +1,26 @@
-# ng-notyf
+<p align="center">
+  <a href="#">
+    <img width=100% src="ng-notyf-logo.png">
+  </a>
+</p>
 
-## Installation
+# 📦 Installation 📦
 
-To install this library, run:
+To install this library, run this command in your Angular application:
 
-```bash
-$ npm install ng-notyf
-```
+`$ npm install ng-notyf --save`
 
-## Usage
+If you use Angular 2 you should already have `@angular/animations` package installed, but if you use Angular 4, you might not, so don't forget to install it:
 
-### 1. Import ng-notyf
+`$ npm install @angular/animations --save`
+
+# 🔥 Usage 🔥
+
+## 1. Import `ng-notyf` into you `app.module`
 
 ```javascript
 import { NotyfModule } from 'ng-notyf';
-```
 
-### 2. Add ng-notyf to your module imports
-
-```javascript
 @NgModule({
   imports: [
     NotyfModule
@@ -29,7 +31,7 @@ import { NotyfModule } from 'ng-notyf';
 })
 ```
 
-### 3. Inject ng-notyf service into your component
+## 2. Inject `ng-notyf` service into your component
 
 ```javascript
 import { NotyfService } from 'ng-notyf';
@@ -37,20 +39,74 @@ import { NotyfService } from 'ng-notyf';
 export class myComponent {
 
   constructor(
-    private notyfService: NgNotyfService
+    private notyfService: NotyfService
   ) { }
 
 }
 ```
 
-### 4. That's it!, start using it
+## 3. That's it!, start using it 👌
 
 ```javascript
-notyfService.alert("Hello, are you batman!?");
-notyfService.confirm("Yes, it's me, Batman");
-notyfService.success("OMG, it's Batman!");
+alert() {
+  this.notyfService.success("I can't believe it, is that easy? 😱");
+  this.notyfService.error("Yes, it is 😎");
+}
 ```
 
-## License
+# 🔨 Customizing 🔨
 
-MIT © [Juan Herrera](mailto:david.juanherrera@gmail.com)
+## 1. Change the notification delay
+
+```javascript
+// The toast now lasts 4 seconds
+this.notyfService.toastDelay = 4000;
+```
+
+## 2. Change the toast style
+
+```javascript
+// Change background and font color
+this.notyfService.toastStyle = { 'background-color': 'purple', 'color': 'white' }; 
+```
+
+## 3. Change the toast container style
+
+```javascript
+// Notification now displayed in the left corner
+this.notyfService.toastContainerStyle = { 'left': '0' };
+```
+
+# 🤷 Troubleshooting 🤷
+
+## Internet Explorer support
+
+We got you covered 😏 Ng-notyf uses the **[Web Animations API](https://w3c.github.io/web-animations/)** so you just have to install this package:
+
+`$ npm install web-animations-js --save` 
+
+And add these to your `polyfills.ts` file:
+
+```
+/** IE9, IE10 and IE11 requires all of the following polyfills. **/
+import 'core-js/es6/symbol';
+import 'core-js/es6/object';
+import 'core-js/es6/function';
+import 'core-js/es6/parse-int';
+import 'core-js/es6/parse-float';
+import 'core-js/es6/number';
+import 'core-js/es6/math';
+import 'core-js/es6/string';
+import 'core-js/es6/date';
+import 'core-js/es6/array';
+import 'core-js/es6/regexp';
+import 'core-js/es6/map';
+import 'core-js/es6/set';
+
+/** IE10 and IE11 requires the following to support `@angular/animation`. */
+import 'web-animations-js';
+```
+
+# License
+
+MIT © [Juan Herrera](https://github.com/jdjuan) and [Carlos Roso](https://github.com/caroso1222)
