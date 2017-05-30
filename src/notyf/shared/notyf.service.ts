@@ -7,20 +7,38 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 @Injectable()
 export class NotyfService {
 
-  private _toastDelay = 2000;
+  private _toastDelay = 4000;
   private _toastStyle: INotyfStyle = {};
   private _toastContainerStyle: INotyfStyle = {};
   private toastContainerElement: HTMLElement;
   private toastContainerRef: ComponentRef<ToastContainerComponent>;
-
+  private defaultSuccessMessages = [
+    '👻👻👻 It just works! 👻👻👻',
+    '👌 I can\'t believe it, is that easy? 😱',
+    '🎉 Woohoo! 🎉',
+    'It\'s me again! 😏',
+    '😺 Meow... 😺'
+  ];
+  private defaultErrorMessages = [
+    'Something went wrong 😰😰😰',
+    'Oops! 💀 Our server is dead 💀',
+    'Your internet connection is 💩',
+    '🤦 Please fill the form correctly 🤦 (Not saying it again)',
+  ];
   constructor(private domService: DomService) {
     this.toastContainerRef = this.domService.createComponentRef(ToastContainerComponent);
     this.toastContainerElement = this.domService.getDomElementFromComponentRef(this.toastContainerRef);
     this.domService.addChild(this.toastContainerElement);
   }
 
-  success(message: string) { this.addToast(message, ToastType.Success); }
-  error(message: string) { this.addToast(message, ToastType.Error); }
+  success(message = this.defaultSuccessMessages.shift()) {
+    this.defaultSuccessMessages.push(message);
+    this.addToast(message, ToastType.Success);
+  }
+  error(message = this.defaultErrorMessages.shift()) {
+    this.defaultErrorMessages.push(message);
+    this.addToast(message, ToastType.Error);
+  }
 
   private addToast(message: string, type: ToastType) {
     const toastRef = this.domService.createComponentRef(ToastComponent);

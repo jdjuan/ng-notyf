@@ -1,6 +1,6 @@
 {
   "name": "ng-notyf",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
@@ -9,18 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/jdjuan/ng-notyf"
   },
   "author": {
     "name": "Juan Herrera",
     "email": "david.juanherrera@gmail.com"
   },
-  "keywords": [
-    "angular"
+  "contributors": [
+    {
+      "name": "Carlos Roso",
+      "email": "ce.roso398@gmail.com"
+    }
   ],
+  "keywords": ["angular", "notification", "success", "error"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/jdjuan/ng-notyf/issues"
   },
   "devDependencies": {
     "@angular/animations": "^4.1.1",

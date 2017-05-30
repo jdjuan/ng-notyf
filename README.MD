@@ -49,8 +49,8 @@ export class myComponent {
 
 ```javascript
 alert() {
-  this.notyfService.success("I can't believe it, is that easy? 😱");
-  this.notyfService.error("Yes, it is 😎");
+  this.notyfService.success("👻👻👻 It just works! 👻👻👻");
+  this.notyfService.error("Something went wrong 😰😰😰");
 }
 ```
 
@@ -59,8 +59,8 @@ alert() {
 ## 1. Change the notification delay
 
 ```javascript
-// The toast now lasts 4 seconds
-this.notyfService.toastDelay = 4000;
+// The toast now lasts 5 seconds
+this.notyfService.toastDelay = 5000;
 ```
 
 ## 2. Change the toast style

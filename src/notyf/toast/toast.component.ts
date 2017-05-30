@@ -18,27 +18,23 @@ import {
 export const flyInOut = trigger('flyInOut', [
   transition('void => *', [
     style({
-      transform: 'translateY(0) scaleX(0.75)',
-      marginBottom: '-50px',
-      opacity: 0
+      transform: 'scale(0) translateX(15px)',
+      opacity: 1
     }),
-    animate('0.4s cubic-bezier(0.23, 1, 0.32, 1)')
+    animate('1s cubic-bezier(0.3, 1, 0.32, 1)')
   ]),
   transition('* => void', [
-    animate('0.4s cubic-bezier(0.23, 1, 0.32, 1)', style({
-      transform: 'translateX(10px)',
+    animate('0.8s cubic-bezier(0.3, 1, 0.32, 1)', style({
+      transform: 'scaleX(1) translateX(15px)',
       opacity: 0
     }))
   ])
-])
+]);
 
 @Component({
   selector: 'notyf-toast',
   template: `{{message}}`,
   animations: [flyInOut],
-  host: {
-    '[@flyInOut]': 'true'
-  },
   styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnInit {
@@ -50,6 +46,7 @@ export class ToastComponent implements OnInit {
 
   @HostBinding('class.notyf--success') success: boolean;
   @HostBinding('class.notyf--error') error: boolean;
+  @HostBinding('@flyInOut') animation;
 
   constructor(public elementRef: ElementRef, public renderer: Renderer) { }
 
