@@ -6,30 +6,30 @@
 
 <p align="center">
   <a href="http://jdjuan.github.io/">
-    <img src="https://img.shields.io/badge/😍-Beatiful_Notifications-1d2935.svg?style=flat" alt="Contribuyentes">
+    <img src="https://img.shields.io/badge/😍-Beatiful_Notifications-1d2935.svg?style=flat" alt="Beautiful Notifications">
   </a>
   <a href="#-usage-">
-    <img src="https://img.shields.io/badge/📦-Easy_Setup-1d2935.svg?style=flat" alt="Speakers">
+    <img src="https://img.shields.io/badge/📦-Easy_Setup-1d2935.svg?style=flat" alt="Easy Setup">
   </a>
   <a href="#-customizing-">
-    <img src="https://img.shields.io/badge/🔨-Highly_Customizable-1d2935.svg?style=flat" alt="Contribuyentes">
+    <img src="https://img.shields.io/badge/🔨-Highly_Customizable-1d2935.svg?style=flat" alt="Highly Customizable">
   </a>
   <a href="http://makeapullrequest.com/">
-    <img src="https://img.shields.io/badge/😁-PRs_Welcome-1d2935.svg?style=flat" alt="Speakers">
+    <img src="https://img.shields.io/badge/😁-PRs_Welcome-1d2935.svg?style=flat" alt="PRs Welcome">
   </a>
   <br>
   <a href="https://twitter.com/jdjuan">
-    <img src="https://img.shields.io/badge/👦-@jdjuan-1d2935.svg?style=flat" alt="Speakers">
+    <img src="https://img.shields.io/badge/👦-@jdjuan-1d2935.svg?style=flat" alt="@jdjuan">
   </a>
   <a href="https://twitter.com/caroso1222">
-    <img src="https://img.shields.io/badge/👨-@caroso1222-1d2935.svg?style=flat" alt="Código de Conducta">
+    <img src="https://img.shields.io/badge/👨-@caroso1222-1d2935.svg?style=flat" alt="@caroso1222">
   </a>
   <br><br>
   <a href="https://github.com/jdjuan/ng-notyf/stargazers">
-    <img src="https://img.shields.io/github/stars/angular-medellin/meetup.svg?style=social" alt="GitHub stars">
+    <img src="https://img.shields.io/github/stars/jdjuan/ng-notyf.svg?style=social" alt="GitHub stars">
   </a>
   <a href="https://github.com/jdjuan/ng-notyf/watchers">
-    <img src="https://img.shields.io/github/watchers/angular-medellin/meetup.svg?style=social" alt="GitHub watchers">
+    <img src="https://img.shields.io/github/watchers/jdjuan/ng-notyf.svg?style=social" alt="GitHub watchers">
   </a>
   <a href="https://twitter.com/intent/tweet?text=Check%20this%20Angular%20library!%20%E2%9C%A8%20Beautiful%20notifications%20in%20your%20app%20%E2%9C%A8%20https://jdjuan.github.io/%20%F0%9F%A4%97
 ">
