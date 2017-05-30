@@ -1,25 +1,32 @@
 {
   "name": "ng-notyf",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/jdjuan/ng-notyf"
   },
   "author": {
     "name": "Juan Herrera",
     "email": "david.juanherrera@gmail.com"
   },
+  "contributors": [
+    {
+      "name": "Carlos Roso",
+      "email": "ce.roso398@gmail.com"
+    }
+  ],
   "keywords": [
-    "angular"
+    "angular", "notification", "success", "error"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/jdjuan/ng-notyf/issues"
   },
   "module": "ng-notyf.js",
   "typings": "ng-notyf.d.ts",
   "peerDependencies": {
     "@angular/core": "^4.0.0",
+    "@angular/animations": "^4.0.0",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   }
