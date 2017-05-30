@@ -4,6 +4,39 @@
   </a>
 </p>
 
+<p align="center">
+  <a href="http://jdjuan.github.io/">
+    <img src="https://img.shields.io/badge/😍-Beatiful_Notifications-1d2935.svg?style=flat" alt="Contribuyentes">
+  </a>
+  <a href="#-usage-">
+    <img src="https://img.shields.io/badge/📦-Easy_Setup-1d2935.svg?style=flat" alt="Speakers">
+  </a>
+  <a href="#-customizing-">
+    <img src="https://img.shields.io/badge/🔨-Highly_Customizable-1d2935.svg?style=flat" alt="Contribuyentes">
+  </a>
+  <a href="http://makeapullrequest.com/">
+    <img src="https://img.shields.io/badge/😁-PRs_Welcome-1d2935.svg?style=flat" alt="Speakers">
+  </a>
+  <br>
+  <a href="https://twitter.com/jdjuan">
+    <img src="https://img.shields.io/badge/👦-@jdjuan-1d2935.svg?style=flat" alt="Speakers">
+  </a>
+  <a href="https://twitter.com/caroso1222">
+    <img src="https://img.shields.io/badge/👨-@caroso1222-1d2935.svg?style=flat" alt="Código de Conducta">
+  </a>
+  <br><br>
+  <a href="https://github.com/jdjuan/ng-notyf/stargazers">
+    <img src="https://img.shields.io/github/stars/angular-medellin/meetup.svg?style=social" alt="GitHub stars">
+  </a>
+  <a href="https://github.com/jdjuan/ng-notyf/watchers">
+    <img src="https://img.shields.io/github/watchers/angular-medellin/meetup.svg?style=social" alt="GitHub watchers">
+  </a>
+  <a href="https://twitter.com/intent/tweet?text=Check%20this%20Angular%20library!%20%E2%9C%A8%20Beautiful%20notifications%20in%20your%20app%20%E2%9C%A8%20https://jdjuan.github.io/%20%F0%9F%A4%97
+">
+    <img src="https://img.shields.io/twitter/url/https/github.com/jdjuan/ng-notyf.svg?style=social" alt="Tweet">
+  </a>
+</p>
+
 # 📦 Installation 📦
 
 To install this library, run this command in your Angular application:
@@ -16,7 +49,7 @@ If you use Angular 2 you should already have `@angular/animations` package insta
 
 # 🔥 Usage 🔥
 
-## 1. Import `ng-notyf` into you `app.module`
+### 1. Import `ng-notyf` into you `app.module`
 
 ```javascript
 import { NotyfModule } from 'ng-notyf';
@@ -31,7 +64,7 @@ import { NotyfModule } from 'ng-notyf';
 })
 ```
 
-## 2. Inject `ng-notyf` service into your component
+### 2. Inject `ng-notyf` service into your component
 
 ```javascript
 import { NotyfService } from 'ng-notyf';
@@ -45,7 +78,7 @@ export class myComponent {
 }
 ```
 
-## 3. That's it!, start using it 👌
+### 3. That's it!, start using it 👌
 
 ```javascript
 alert() {
@@ -56,21 +89,21 @@ alert() {
 
 # 🔨 Customizing 🔨
 
-## 1. Change the notification delay
+### 1. Change the notification delay
 
 ```javascript
 // The toast now lasts 5 seconds
 this.notyfService.toastDelay = 5000;
 ```
 
-## 2. Change the toast style
+### 2. Change the toast style
 
 ```javascript
 // Change background and font color
 this.notyfService.toastStyle = { 'background-color': 'purple', 'color': 'white' }; 
 ```
 
-## 3. Change the toast container style
+### 3. Change the toast container style
 
 ```javascript
 // Notification now displayed in the left corner
@@ -79,7 +112,7 @@ this.notyfService.toastContainerStyle = { 'left': '0' };
 
 # 🤷 Troubleshooting 🤷
 
-## Internet Explorer support
+### Internet Explorer support
 
 We got you covered 😏 Ng-notyf uses the **[Web Animations API](https://w3c.github.io/web-animations/)** so you just have to install this package:
 
