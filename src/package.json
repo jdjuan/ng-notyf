@@ -16,7 +16,10 @@
     }
   ],
   "keywords": [
-    "angular", "notification", "success", "error"
+    "angular",
+    "notification",
+    "success",
+    "error"
   ],
   "license": "MIT",
   "bugs": {

@@ -1,4 +1,4 @@
-:host {
+  :host {
   background: #323232;
   display: block;
   color: white;
@@ -16,4 +16,46 @@
 
 :host(.notyf--success) {
   background: #4cae4c;
+}
+
+@media (max-width: 1024px) {
+    :host {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 800px) {
+    :host {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 500px) {
+    :host {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    :host {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+  :host {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  :host {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  :host {
+    font-size: 1.3rem;
+  }
 }

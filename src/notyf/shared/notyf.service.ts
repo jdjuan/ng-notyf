@@ -7,7 +7,7 @@ import { ToastContainerComponent } from '../toast-container/toast-container.comp
 @Injectable()
 export class NotyfService {
 
-  private _toastDelay = 4000;
+  private _toastDelay = 5000;
   private _toastStyle: INotyfStyle = {};
   private _toastContainerStyle: INotyfStyle = {};
   private toastContainerElement: HTMLElement;
