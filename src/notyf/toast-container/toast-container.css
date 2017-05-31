@@ -1,7 +1,13 @@
-:host { 
+:host {
     display: block;
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 20rem;
+    width: 40%;
+}
+
+@media (max-width: 1024px) {
+    :host {
+        width: 100%;
+    }
 }

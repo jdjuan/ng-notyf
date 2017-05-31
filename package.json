@@ -21,7 +21,12 @@
       "email": "ce.roso398@gmail.com"
     }
   ],
-  "keywords": ["angular", "notification", "success", "error"],
+  "keywords": [
+    "angular",
+    "notification",
+    "success",
+    "error"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/jdjuan/ng-notyf/issues"

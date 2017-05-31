@@ -92,8 +92,8 @@ alert() {
 ### 1. Change the notification delay
 
 ```javascript
-// The toast now lasts 5 seconds
-this.notyfService.toastDelay = 5000;
+// The toast now lasts 8 seconds
+this.notyfService.toastDelay = 8000;
 ```
 
 ### 2. Change the toast style
