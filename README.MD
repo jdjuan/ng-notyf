@@ -37,9 +37,11 @@
   </a>
 </p>
 
-# ⭐️ [Demo](https://jdjuan.github.io/ng-notyf/) ⭐️
-
-![demo gif](https://media.giphy.com/media/l4FGkfHOYuEweAEQ8/giphy.gif)
+<p align="center">
+  <a href="https://jdjuan.github.io/ng-notyf/">
+    <img src="https://media.giphy.com/media/l4FGkfHOYuEweAEQ8/giphy.gif">
+  </a>
+</p>
 
 # 📦 Installation 📦
 
