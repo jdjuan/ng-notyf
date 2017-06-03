@@ -37,8 +37,7 @@
   </a>
 </p>
 
-# ⭐️ Demo ⭐️
-**Demo:** https://jdjuan.github.io/ng-notyf/
+# ⭐️ [Demo](https://jdjuan.github.io/ng-notyf/) ⭐️
 
 ![demo gif](https://media.giphy.com/media/l4FGkfHOYuEweAEQ8/giphy.gif)
 
