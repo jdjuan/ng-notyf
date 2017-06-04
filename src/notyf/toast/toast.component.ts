@@ -46,6 +46,8 @@ export class ToastComponent implements OnInit {
 
   @HostBinding('class.notyf--success') success: boolean;
   @HostBinding('class.notyf--error') error: boolean;
+  @HostBinding('class.notyf--warning') warning: boolean;
+  @HostBinding('class.notyf--info') info: boolean;
   @HostBinding('@flyInOut') animation;
 
   constructor(public elementRef: ElementRef, public renderer: Renderer) { }
@@ -53,9 +55,11 @@ export class ToastComponent implements OnInit {
   ngOnInit() {
     this.success = this.type === ToastType.Success;
     this.error = this.type === ToastType.Error;
+    this.warning = this.type === ToastType.Warning;
+    this.info = this.type === ToastType.Info;
   }
 }
 
 export enum ToastType {
-    Success, Error
+    Success, Error, Warning, Info
 }
