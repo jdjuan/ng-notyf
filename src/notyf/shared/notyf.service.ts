@@ -25,6 +25,16 @@ export class NotyfService {
     'Your internet connection is 💩',
     '🤦 Please fill the form correctly 🤦 (Not saying it again)',
   ];
+  private defaultWarningMessages = [
+    'The cats will domain the world 😺😺😺',
+    'Can you call me ?, I lost my phone in my bed',
+    'I dont have more message, sorry',
+  ];
+  private defaultInfoMessages = [
+    'The Area 51 exists!! 😱',
+    'I know, I know, I\'m sexy toast',
+    '🎉 Woohoo! 🎉'
+  ];
   constructor(private domService: DomService) {
     this.toastContainerRef = this.domService.createComponentRef(ToastContainerComponent);
     this.toastContainerElement = this.domService.getDomElementFromComponentRef(this.toastContainerRef);
@@ -38,6 +48,14 @@ export class NotyfService {
   error(message = this.defaultErrorMessages.shift()) {
     this.defaultErrorMessages.push(message);
     this.addToast(message, ToastType.Error);
+  }
+  warning(message = this.defaultWarningMessages.shift()) {
+    this.defaultWarningMessages.push(message);
+    this.addToast(message, ToastType.Warning);
+  }
+  info(message = this.defaultInfoMessages.shift()) {
+    this.defaultInfoMessages.push(message);
+    this.addToast(message, ToastType.Info);
   }
 
   private addToast(message: string, type: ToastType) {

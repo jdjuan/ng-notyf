@@ -18,6 +18,14 @@
   background: #4cae4c;
 }
 
+:host(.notyf--warning) {
+  background: #f89406;
+}
+
+:host(.notyf--info) {
+  background: #2f96b4;
+}
+
 @media (max-width: 1024px) {
     :host {
         font-size: 1.6rem;

@@ -25,7 +25,9 @@
     "angular",
     "notification",
     "success",
-    "error"
+    "error",
+    "warning",
+    "info"
   ],
   "license": "MIT",
   "bugs": {
@@ -33,6 +35,7 @@
   },
   "devDependencies": {
     "@angular/animations": "^4.1.1",
+    "@angular/cli": "^1.1.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",
