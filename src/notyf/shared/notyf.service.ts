@@ -1,5 +1,6 @@
 import { INotyfStyle } from './inotyf-style';
 import { DomService } from './dom.service';
+import { DefaultMessages } from './default-messages';
 import { Injectable, ComponentRef } from '@angular/core';
 import { ToastComponent, ToastType } from '../toast/toast.component';
 import { ToastContainerComponent } from '../toast-container/toast-container.component';
@@ -12,49 +13,27 @@ export class NotyfService {
   private _toastContainerStyle: INotyfStyle = {};
   private toastContainerElement: HTMLElement;
   private toastContainerRef: ComponentRef<ToastContainerComponent>;
-  private defaultSuccessMessages = [
-    '👻👻👻 It just works! 👻👻👻',
-    '👌 I can\'t believe it, is that easy? 😱',
-    '🎉 Woohoo! 🎉',
-    'It\'s me again! 😏',
-    '😺 Meow... 😺'
-  ];
-  private defaultErrorMessages = [
-    'Something went wrong 😰😰😰',
-    'Oops! 💀 Our server is dead 💀',
-    'Your internet connection is 💩',
-    '🤦 Please fill the form correctly 🤦 (Not saying it again)',
-  ];
-  private defaultWarningMessages = [
-    'The cats will domain the world 😺😺😺',
-    'Can you call me ?, I lost my phone in my bed',
-    'I dont have more message, sorry',
-  ];
-  private defaultInfoMessages = [
-    'The Area 51 exists!! 😱',
-    'I know, I know, I\'m sexy toast',
-    '🎉 Woohoo! 🎉'
-  ];
+
   constructor(private domService: DomService) {
     this.toastContainerRef = this.domService.createComponentRef(ToastContainerComponent);
     this.toastContainerElement = this.domService.getDomElementFromComponentRef(this.toastContainerRef);
     this.domService.addChild(this.toastContainerElement);
   }
 
-  success(message = this.defaultSuccessMessages.shift()) {
-    this.defaultSuccessMessages.push(message);
+  success(message = DefaultMessages.success.shift()) {
+    DefaultMessages.success.push(message);
     this.addToast(message, ToastType.Success);
   }
-  error(message = this.defaultErrorMessages.shift()) {
-    this.defaultErrorMessages.push(message);
+  error(message = DefaultMessages.error.shift()) {
+    DefaultMessages.error.push(message);
     this.addToast(message, ToastType.Error);
   }
-  warning(message = this.defaultWarningMessages.shift()) {
-    this.defaultWarningMessages.push(message);
+  warning(message = DefaultMessages.warning.shift()) {
+    DefaultMessages.warning.push(message);
     this.addToast(message, ToastType.Warning);
   }
-  info(message = this.defaultInfoMessages.shift()) {
-    this.defaultInfoMessages.push(message);
+  info(message = DefaultMessages.info.shift()) {
+    DefaultMessages.info.push(message);
     this.addToast(message, ToastType.Info);
   }
 
