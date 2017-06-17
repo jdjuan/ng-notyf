@@ -1,4 +1,4 @@
-# What would you like ...  
+# What would you like to do...  
 
 `Check the one that applies with an "x" => [x]`
 
@@ -28,7 +28,7 @@ A link to a sample repo would help too.
 
 ### Desired functionality.
 <!--
-What would like to see implemented?
+What would you like to see implemented?
 What is the usecase?
 -->
 
