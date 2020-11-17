@@ -3,7 +3,7 @@ import {
   OnInit,
   Input,
   ElementRef,
-  Renderer,
+  Renderer2,
   HostBinding
 } from '@angular/core';
 
@@ -50,7 +50,7 @@ export class ToastComponent implements OnInit {
   @HostBinding('class.notyf--info') info: boolean;
   @HostBinding('@flyInOut') animation;
 
-  constructor(public elementRef: ElementRef, public renderer: Renderer) { }
+  constructor(public elementRef: ElementRef, public renderer: Renderer2) { }
 
   ngOnInit() {
     this.success = this.type === ToastType.Success;

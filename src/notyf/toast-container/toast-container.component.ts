@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
     selector: 'notyf-toast-container',
@@ -7,7 +7,7 @@ import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
 })
 export class ToastContainerComponent implements OnInit {
 
-    constructor(public elementRef: ElementRef, public renderer: Renderer) { }
+    constructor(public elementRef: ElementRef, public renderer: Renderer2) { }
 
     ngOnInit() { }
 }
