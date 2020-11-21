@@ -1,6 +1,6 @@
 {
   "name": "ng-notyf",
-  "version": "0.5.0",
+  "version": "0.4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/jdjuan/ng-notyf"
@@ -13,6 +13,10 @@
     {
       "name": "Carlos Roso",
       "email": "ce.roso398@gmail.com"
+    },
+    {
+      "name": "Rifthy Ahmed",
+      "email": "rifthyahmed@gmail.com"
     }
   ],
   "keywords": [
